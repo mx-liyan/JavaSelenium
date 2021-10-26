@@ -68,7 +68,7 @@
                 <configuration>
                     <!-- 测试失败后，是否忽略并继续测试 -->
                     <testFailureIgnore>true</testFailureIgnore>
-
+                    <forkCount>0</forkCount>
                     <!--设置参数命令行 -->
                     <argLine>
                         <!-- UTF-8编码 -->
