@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite" parallel="tests" thread-count="2">
+    <listeners>
+        <listener class-name="com.ly.javaselenium.webdriver.Listener.TestNGListener"></listener>
+    </listeners>
+    <test verbose="2" name="D:/Java-work/JavaSelenium">
+        <classes>
+            <class name="com.ly.javaselenium.webdriver.testSuites.LoginTest">
+            </class>
+        </classes>
+    </test>
+</suite>
