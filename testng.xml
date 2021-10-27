@@ -6,8 +6,7 @@
     </listeners>
     <test verbose="2" name="D:/Java-work/JavaSelenium">
         <classes>
-            <class name="com.ly.javaselenium.webdriver.testSuites.LoginTest">
-            </class>
+            <class name="com.ly.javaselenium.webdriver.testSuites.LoginTest"/>
         </classes>
     </test>
 </suite>
