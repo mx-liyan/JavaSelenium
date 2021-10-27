@@ -8,15 +8,14 @@ import org.openqa.selenium.support.PageFactory;
  * @author 李岩
  * @data 2021/10/20 11:08
  */
-public class FirstAction {
+public class FirstAction extends BaseAction<FirstPage>{
 
-    private FirstPage firstPage;
 
-    public FirstAction(WebDriver driver){
-        firstPage = PageFactory.initElements(driver,FirstPage.class);
+    public FirstAction(WebDriver driver) {
+        super(driver);
     }
 
     public String shouRes(){
-        return firstPage.logo.getText();
+        return t.logo.getText();
     }
 }

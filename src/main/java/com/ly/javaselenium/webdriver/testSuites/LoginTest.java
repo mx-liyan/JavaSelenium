@@ -5,6 +5,7 @@ import com.ly.javaselenium.webdriver.action.LoginAction;
 import com.ly.javaselenium.webdriver.contants.Config;
 import io.qameta.allure.*;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -24,8 +25,9 @@ public class LoginTest extends BaseTest {
 
     LoginAction loginAction;
 
-    @BeforeTest
+    @BeforeClass(description = "输入网址")
     public void setTest() {
+        driver.get(Config.url);
         loginAction = new LoginAction(driver);
     }
 
@@ -33,7 +35,7 @@ public class LoginTest extends BaseTest {
      * 1代表正确，0代表不正确
      */
 
-    @Test(priority = 2)
+    @Test(priority = 2,description = "输入正确的用户名、密码")
     @Story("输入操作")
     @Description("输入正确的用户名、密码")
     public void user1pass1() throws InterruptedException {
@@ -49,7 +51,7 @@ public class LoginTest extends BaseTest {
      * 1代表正确，0代表不正确
      */
 
-    @Test(priority = 1)
+    @Test(priority = 1,description = "输入正确的用户名、错误的密码")
     @Story("输入操作")
     @Description("输入正确的用户名、错误的密码")
     public void user1pass0() throws InterruptedException {

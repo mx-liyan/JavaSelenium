@@ -20,12 +20,12 @@ import java.io.IOException;
  */
 @Listeners({TestNGListener.class})
 public class BaseTest {
+
     public WebDriver driver;
 
     @BeforeClass(description = "打开浏览器操作")
     public void setUp() {
         driver = new ChromeDriver();
-        driver.get(Config.url);
         driver.manage().window().maximize();
     }
 

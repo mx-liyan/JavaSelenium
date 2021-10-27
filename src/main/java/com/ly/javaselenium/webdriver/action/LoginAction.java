@@ -16,21 +16,19 @@ import java.util.List;
  * @author 李岩
  * @data 2021/10/19 10:07
  */
-public class LoginAction {
-    private LoginPage loginPage;
-    private WebDriver driver;
+public class LoginAction extends BaseAction<LoginPage>{
 
-    public LoginAction(WebDriver driver){
-        loginPage = PageFactory.initElements(driver, LoginPage.class);
-        this.driver = driver;
+
+    public LoginAction(WebDriver driver) {
+        super(driver);
     }
 
-    public void inUserPass(String user,String pass){
-        loginPage.username.clear();
-        loginPage.password.clear();
-        loginPage.username.sendKeys(user);
-        loginPage.password.sendKeys(pass);
-        loginPage.dologin.click();
+    public void inUserPass(String user, String pass){
+        t.username.clear();
+        t.password.clear();
+        t.username.sendKeys(user);
+        t.password.sendKeys(pass);
+        t.dologin.click();
     }
 
     public String messRes(){
