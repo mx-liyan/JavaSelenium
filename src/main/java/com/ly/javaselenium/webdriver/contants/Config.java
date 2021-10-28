@@ -22,4 +22,8 @@ public class Config {
     public static final String FaBiaoWenZhangTitle = "感悟";
 
     public static final String successUrl = "http://47.112.32.195:8081/index.html#/articleList";
+
+    public static final String BaiDu = "https://www.baidu.com/";
+
+    public static final String searchText = "selenium";
 }
