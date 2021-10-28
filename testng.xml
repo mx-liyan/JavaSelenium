@@ -9,10 +9,9 @@
                     <include name="user1pass0"/>
                 </methods>
             </class>
-            <class name="com.ly.javaselenium.webdriver.testSuites.EnvirTest">
+            <class name="com.ly.javaselenium.webdriver.testSuites.FaBiaoWenZhang">
                 <methods>
-                    <exclude name="addEnvir"/>
-                    <include name="seleteEnvir"/>
+                    <include name="addWenZhang"/>
                 </methods>
             </class>
         </classes>

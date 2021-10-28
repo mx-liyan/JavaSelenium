@@ -1,13 +1,14 @@
 package com.ly.javaselenium.webdriver.testSuites;
 
-import com.ly.javaselenium.webdriver.action.FirstAction;
 import com.ly.javaselenium.webdriver.action.LoginAction;
+import com.ly.javaselenium.webdriver.action.MainAction;
 import com.ly.javaselenium.webdriver.contants.Config;
 import io.qameta.allure.*;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author 李岩
@@ -42,8 +43,9 @@ public class LoginTest extends BaseTest {
         Allure.step("输入用户名、密码");
         loginAction.inUserPass(Config.userName, Config.passWord);
         Thread.sleep(5000);
-        FirstAction firstAction = new FirstAction(driver);
-        Assert.assertEquals(firstAction.shouRes(), "MX自动化测试管理平台");
+        MainAction mainAction = new MainAction(driver);
+        Assert.assertEquals(mainAction.successText(), "友情提示");
+        mainAction.successButtonClick();
         //Thread.sleep(3000);
     }
 
@@ -57,8 +59,10 @@ public class LoginTest extends BaseTest {
     public void user1pass0() throws InterruptedException {
         Allure.step("输入用户名、错误的密码");
         loginAction.inUserPass(Config.userName1, Config.passWord0);
-        Assert.assertEquals(loginAction.messRes(), "密码错误111");
-
+        Thread.sleep(2000);
+        Assert.assertEquals(loginAction.failText(), "失败!");
+        loginAction.failButtonClick();
+        Thread.sleep(5000);
         //Thread.sleep(3000);
     }
 

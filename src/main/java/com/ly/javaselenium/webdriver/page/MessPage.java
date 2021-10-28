@@ -5,11 +5,11 @@ import org.openqa.selenium.support.FindBy;
 
 /**
  * @author 李岩
- * @data 2021/10/20 17:13
+ * @data 2021/10/28 10:17
  */
 public class MessPage {
 
-    @FindBy(xpath = "/html/body/div[2]/p")
-    public WebElement mess;
-
+    //弹出成功框
+    @FindBy(xpath = "/html/body/div[3]/p")
+    public WebElement successAlert;
 }

@@ -2,8 +2,6 @@ package com.ly.javaselenium.webdriver.action;
 
 import com.ly.javaselenium.webdriver.page.MainPage;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.PageFactory;
-
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -21,5 +19,23 @@ public class MainAction extends BaseAction<MainPage>{
         //mainPage.zhankai.click();
         t.envirDiv.click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
+
+    public String successText(){
+        return t.successText.getText();
+    }
+
+    public void successButtonClick(){
+        t.successButton.click();
+    }
+
+    //点击文章管理
+    public void wenZhangManageClick(){
+        t.wenZhangManage.click();
+    }
+
+    //点击发表文章
+    public void faBiaoWenZhangClick(){
+        t.faBiaoWenZhang.click();
     }
 }
