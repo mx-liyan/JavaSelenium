@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
+    <parameter name="userName" value="sang"></parameter>
+    <parameter name="passWord" value="123"></parameter>
     <test verbose="2" preserve-order="true" name="D:/Java-work/JavaSelenium">
         <classes>
             <class name="com.ly.javaselenium.webdriver.testSuites.LoginTest">
                 <methods>
-                    <include name="user1pass1"/>
+                    <exclude name="user1pass1"/>
                     <include name="user1pass0"/>
                 </methods>
             </class>
-            <class name="com.ly.javaselenium.webdriver.testSuites.FaBiaoWenZhang">
+            <!--<class name="com.ly.javaselenium.webdriver.testSuites.FaBiaoWenZhang">
                 <methods>
                     <include name="addWenZhang"/>
                 </methods>
-            </class>
+            </class>-->
         </classes>
     </test>
 </suite>

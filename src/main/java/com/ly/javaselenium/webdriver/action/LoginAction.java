@@ -15,7 +15,7 @@ public class LoginAction extends BaseAction<LoginPage>{
         super(driver);
     }
 
-    public void inUserPass(String user, String pass){
+    public void inUserPass(String user, String pass) throws InterruptedException {
         t.username.click();
         t.username.sendKeys(Keys.CONTROL, "a");
         t.username.sendKeys(Keys.chord(Keys.DELETE));
@@ -24,7 +24,9 @@ public class LoginAction extends BaseAction<LoginPage>{
         t.password.sendKeys(Keys.chord(Keys.DELETE));
 
         t.username.sendKeys(user);
+        Thread.sleep(2000);
         t.password.sendKeys(pass);
+        Thread.sleep(2000);
         t.dologin.click();
     }
 

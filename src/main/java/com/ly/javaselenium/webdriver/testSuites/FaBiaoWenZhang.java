@@ -3,7 +3,6 @@ package com.ly.javaselenium.webdriver.testSuites;
 import com.ly.javaselenium.webdriver.action.FaBiaoWenZhangAction;
 import com.ly.javaselenium.webdriver.action.LoginAction;
 import com.ly.javaselenium.webdriver.action.MainAction;
-import com.ly.javaselenium.webdriver.action.MessAction;
 import com.ly.javaselenium.webdriver.contants.Config;
 import io.qameta.allure.Description;
 import io.qameta.allure.Feature;
@@ -12,8 +11,6 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
-import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -27,7 +24,7 @@ public class FaBiaoWenZhang extends BaseTest{
     private MainAction mainAction;
     LoginAction loginAction;
     @BeforeClass(description = "输入网址、登录")
-    public void setTest(){
+    public void setTest() throws InterruptedException {
         driver.get(Config.url);
         loginAction = new LoginAction(driver);
         loginAction.inUserPass(Config.userName, Config.passWord);
@@ -47,6 +44,4 @@ public class FaBiaoWenZhang extends BaseTest{
         Thread.sleep(2000);
         Assert.assertEquals(driver.findElement(By.xpath("/html/body/div[1]/section/section/section/main/div/span[2]")).getText(),"文章列表");
     }
-
-
 }
